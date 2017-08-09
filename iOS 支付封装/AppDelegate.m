@@ -5,9 +5,13 @@
 //  Created by 金靖媛 on 2017/8/8.
 //  Copyright © 2017年 LY. All rights reserved.
 //
-
+/*
+ *  微信、支付宝、银联
+ *  苹果内购、京东钱包、百度钱包
+ */
 #import "AppDelegate.h"
-
+#import "JYPayManager.h"
+#import "WXApi.h"
 @interface AppDelegate ()
 
 @end
@@ -16,9 +20,28 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [WXApi registerApp:@"wxb4ba3c02aa476ea1"];
+//    [JYPayManager WXPayRegisterAppWithAppId:@"wxb4ba3c02aa476ea1"];
     return YES;
 }
+
+#pragma mark -
+#pragma mark -   支付
+
+//iOS9之前
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    [JYPayManager handleOpenAppUrl:url];
+    return YES;
+}
+
+//iOS9之后
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
+{
+    //[JYPayManager handleOpenAppUrl:url];
+    return YES;
+}
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {

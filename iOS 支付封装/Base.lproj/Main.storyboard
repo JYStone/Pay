@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,58 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vd8-AU-8Wh">
+                                <rect key="frame" x="86" y="120" width="203" height="44"/>
+                                <color key="backgroundColor" red="0.74458815070204409" green="0.66476633634849192" blue="0.96392416954040527" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Hq6-e8-zfP"/>
+                                </constraints>
+                                <state key="normal" title="支付宝"/>
+                                <connections>
+                                    <action selector="aliPayBtnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tlr-sk-ueE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3lt-2k-Ld3">
+                                <rect key="frame" x="86" y="264" width="203" height="44"/>
+                                <color key="backgroundColor" red="0.74458815069999995" green="0.66476633630000004" blue="0.96392416950000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="h7k-XY-e43"/>
+                                </constraints>
+                                <state key="normal" title="银联"/>
+                                <connections>
+                                    <action selector="unionBtnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eja-sI-28y"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zOP-Fy-Jhy">
+                                <rect key="frame" x="86" y="191" width="203" height="44"/>
+                                <color key="backgroundColor" red="0.74458815069999995" green="0.66476633630000004" blue="0.96392416950000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Ufo-9t-lli"/>
+                                </constraints>
+                                <state key="normal" title="微信"/>
+                                <connections>
+                                    <action selector="weChartBtnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zw1-do-yr8"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="3lt-2k-Ld3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="70" id="7bh-V3-NL1"/>
+                            <constraint firstItem="zOP-Fy-Jhy" firstAttribute="leading" secondItem="vd8-AU-8Wh" secondAttribute="leading" id="DQl-Io-AFf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vd8-AU-8Wh" secondAttribute="trailing" constant="70" id="EUL-ia-iD0"/>
+                            <constraint firstItem="vd8-AU-8Wh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="70" id="Jmm-cK-eHj"/>
+                            <constraint firstItem="vd8-AU-8Wh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="Qpa-3y-jzy"/>
+                            <constraint firstItem="3lt-2k-Ld3" firstAttribute="top" secondItem="zOP-Fy-Jhy" secondAttribute="bottom" constant="29" id="fc1-Vf-08B"/>
+                            <constraint firstItem="zOP-Fy-Jhy" firstAttribute="top" secondItem="vd8-AU-8Wh" secondAttribute="bottom" constant="27" id="h4n-B0-z0I"/>
+                            <constraint firstItem="zOP-Fy-Jhy" firstAttribute="trailing" secondItem="vd8-AU-8Wh" secondAttribute="trailing" id="xUd-94-A1z"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3lt-2k-Ld3" secondAttribute="trailing" constant="70" id="yhh-8u-Bwm"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
         </scene>
     </scenes>
 </document>
